@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtStore.Core.AccountContext.ValueObjects
+namespace JwtStore.Core.Context.AccountContext.ValueObjects
 {
     public class Password
     {
@@ -24,7 +24,7 @@ namespace JwtStore.Core.AccountContext.ValueObjects
             Hash = Hashing(text);
         }
 
-        public string Hash { get; } = String.Empty;
+        public string Hash { get; } = string.Empty;
         public string ResetCode { get; } = Guid.NewGuid().ToString("N")[..8].ToUpper();
 
         private static string Generate(
@@ -32,7 +32,7 @@ namespace JwtStore.Core.AccountContext.ValueObjects
             bool includeSpecialChars = true,
             bool upperCase = false)
         {
-            var chars = includeSpecialChars ? (Valid + Special) : Valid;
+            var chars = includeSpecialChars ? Valid + Special : Valid;
             var startRandom = upperCase ? 26 : 0;
             var index = 0;
             var res = new char[length];
@@ -50,7 +50,7 @@ namespace JwtStore.Core.AccountContext.ValueObjects
             short keySize = 32,
             int iterations = 10000,
             char splitChar = '.')
-        
+
         {
             if (string.IsNullOrEmpty(password))
                 throw new Exception("Password should not be null or empty");
@@ -74,7 +74,7 @@ namespace JwtStore.Core.AccountContext.ValueObjects
             short keySize = 32,
             int iterations = 10000,
             char splitChar = '.')
-        
+
         {
             password += Configuration.Secrets.PasswordSaltKey;
 

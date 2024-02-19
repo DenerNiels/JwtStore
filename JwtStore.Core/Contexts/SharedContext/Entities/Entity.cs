@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtStore.Core.SharedContext.Entities
+namespace JwtStore.Core.Context.SharedContext.Entities
 {
     public abstract class Entity : IEquatable<Guid>
     {
-        protected Entity() 
+        protected Entity()
             => Id = Guid.NewGuid();
 
         public Guid Id { get; private set; }
-        public bool Equals(Guid id) 
+        public bool Equals(Guid id)
             => Id == id;
-        public override int GetHashCode() 
+        public override int GetHashCode()
             => Id.GetHashCode();
     }
 }

@@ -1,11 +1,11 @@
-﻿using JwtStore.Core.SharedContext.ValueObjects;
+﻿using JwtStore.Core.Context.SharedContext.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtStore.Core.AccountContext.ValueObjects
+namespace JwtStore.Core.Context.AccountContext.ValueObjects
 {
     public class Verification : ValueObject
     {
@@ -29,7 +29,7 @@ namespace JwtStore.Core.AccountContext.ValueObjects
                 throw new Exception("este codigo ja expirou");
             }
 
-            if (!string.Equals(code.Trim(), Code.Trim(), StringComparison.CurrentCultureIgnoreCase)) 
+            if (!string.Equals(code.Trim(), Code.Trim(), StringComparison.CurrentCultureIgnoreCase))
             {
                 throw new Exception("Código de verificação inválido");
             }

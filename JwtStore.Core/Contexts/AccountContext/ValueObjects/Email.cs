@@ -1,5 +1,6 @@
-﻿using JwtStore.Core.SharedContext.Extensions;
-using JwtStore.Core.SharedContext.ValueObjects;
+﻿using JwtStore.Core.Context.AccountContext.ValueObjects;
+using JwtStore.Core.Context.SharedContext.Extensions;
+using JwtStore.Core.Context.SharedContext.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

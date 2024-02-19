@@ -1,12 +1,13 @@
 ﻿using JwtStore.Core.AccountContext.ValueObjects;
-using JwtStore.Core.SharedContext.Entities;
+using JwtStore.Core.Context.AccountContext.ValueObjects;
+using JwtStore.Core.Context.SharedContext.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtStore.Core.AccountContext.Entities
+namespace JwtStore.Core.Context.AccountContext.Entities
 {
     public class User : Entity
     {

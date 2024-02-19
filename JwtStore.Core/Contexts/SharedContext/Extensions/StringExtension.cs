@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtStore.Core.SharedContext.Extensions
+namespace JwtStore.Core.Context.SharedContext.Extensions
 {
     public static class StringExtension
     {
