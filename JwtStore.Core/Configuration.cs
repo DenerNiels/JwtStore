@@ -10,6 +10,8 @@ namespace JwtStore.Core
     {
 
         public static SecretsConfiguration Secrets { get; set; } = new();
+        public static EmailConfiguration Email { get; set; } = new();
+        public static SendGridConfiguration SendGrid { get; set; } = new();
         public static DatabaseConfiguration Database { get; set; } = new();
 
         public class DatabaseConfiguration
@@ -17,11 +19,23 @@ namespace JwtStore.Core
             public string ConnectionString { get; set; } = string.Empty;
         }
 
-        public class SecretsConfiguration
+        public class EmailConfiguration
+        {
+            public string DefaultFromEmail { get; set; } = "dener.shift@gmail.com";
+            public string DefaultFromName { get; set; } = "Dener Niels";
+        }
+
+        public class SendGridConfiguration
         {
             public string ApiKey { get; set; } = string.Empty;
-            public string JwtPrivateKey { get; set; } = string.Empty;
-            public string PasswordSaltKey { get; set; } = string.Empty;
+
+        }
+
+            public class SecretsConfiguration
+            {
+                public string ApiKey { get; set; } = string.Empty;
+                public string JwtPrivateKey { get; set; } = string.Empty;
+                public string PasswordSaltKey { get; set; } = string.Empty;
+            }
         }
     }
-}
