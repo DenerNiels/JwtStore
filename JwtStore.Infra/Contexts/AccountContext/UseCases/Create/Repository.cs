@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtStore.Infra.Contexts.AccountContext.Mappings.UseCases.Create
+namespace JwtStore.Infra.Contexts.AccountContext.UseCases.Create
 {
     public class Repository : IRepository
     {
