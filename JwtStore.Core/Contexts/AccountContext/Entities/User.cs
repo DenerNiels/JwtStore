@@ -1,6 +1,7 @@
 ﻿using JwtStore.Core.AccountContext.ValueObjects;
 using JwtStore.Core.Context.AccountContext.ValueObjects;
 using JwtStore.Core.Context.SharedContext.Entities;
+using JwtStore.Core.Contexts.AccountContext.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace JwtStore.Core.Context.AccountContext.Entities
         public Email Email { get; private set; } = null!;
         public Password Password { get; private set; } = null!;
         public string Image { get; private set; } = string.Empty;
+        public IEnumerable<Role> Roles { get; set; } = Enumerable.Empty<Role>();
 
         public void UpdatePassword(string plainTextPassword, string code)
         {
