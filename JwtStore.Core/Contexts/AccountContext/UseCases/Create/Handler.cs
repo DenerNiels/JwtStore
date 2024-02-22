@@ -2,12 +2,12 @@
 using JwtStore.Core.Context.AccountContext.Entities;
 using JwtStore.Core.Context.AccountContext.ValueObjects;
 using JwtStore.Core.Contexts.AccountContext.UseCases.Create.Contracts;
-using System.Threading;
+using MediatR;
 
 
 namespace JwtStore.Core.Contexts.AccountContext.UseCases.Create
 {
-    public class Handler
+    public class Handler : IRequestHandler<Request, Response>
     {
         private readonly IRepository _repository;
         private readonly IService _service;

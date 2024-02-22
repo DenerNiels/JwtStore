@@ -2,11 +2,6 @@
 using JwtStore.Core.Contexts.AccountContext.UseCases.Create.Contracts;
 using JwtStore.Infra.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JwtStore.Infra.Contexts.AccountContext.UseCases.Create
 {

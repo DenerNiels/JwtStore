@@ -19,7 +19,9 @@ namespace JwtStore.Api.Extensions
 
         public static void MapAccountEndponints(this WebApplication app)
         {
+            #region Create
 
+            #endregion
         }
     }
 }

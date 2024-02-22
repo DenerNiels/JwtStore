@@ -7,6 +7,8 @@ builder.AddJwtAuthentication();
 
 builder.AddAccountContext();
 
+builder.AddMediator();
+
 var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
