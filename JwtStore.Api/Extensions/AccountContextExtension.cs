@@ -29,8 +29,8 @@ namespace JwtStore.Api.Extensions
             {
                 var result = await handler.Handle(request, new CancellationToken());
                 return result.IsSuccess
-                    ? Results.Created("", result)
-                    : Results.Json(result, statusCode : result.Status);
+                    ? Results.Created("api/v1/users", result)
+                    : Results.Json(result, statusCode: result.Status);
             });
             #endregion
         }
