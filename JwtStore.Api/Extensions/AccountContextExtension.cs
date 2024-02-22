@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Builder;
 using System.Runtime.CompilerServices;
 
 namespace JwtStore.Api.Extensions
@@ -26,20 +27,6 @@ namespace JwtStore.Api.Extensions
 
         public static void MapAccountEndponints(this WebApplication app)
         {
-            #region Create
-            app.MapPost("api/v1/users", async (
-                JwtStore.Core.Contexts.AccountContext.UseCases.Create.Request request,
-                IRequestHandler<
-                    JwtStore.Core.Contexts.AccountContext.UseCases.Create.Request,
-                    JwtStore.Core.Contexts.AccountContext.UseCases.Create.Response> handler) =>
-            {
-                var result = await handler.Handle(request, new CancellationToken());
-                return result.IsSuccess
-                    ? Results.Created("api/v1/users", result)
-                    : Results.Json(result, statusCode: result.Status);
-            });
-            #endregion
-
             #region Authenticate
             app.MapPost("api/v1/authenticate", async (
                 JwtStore.Core.Contexts.AccountContext.UseCases.Authenticate.Request request,
@@ -56,7 +43,8 @@ namespace JwtStore.Api.Extensions
 
                 result.Data.Token = JwtExtension.Generate(result.Data);
                 return Results.Ok(result);
-            });
+            })
+                .RequireAuthorization();
             #endregion
         }
     }

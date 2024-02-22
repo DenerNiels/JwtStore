@@ -61,6 +61,10 @@ namespace JwtStore.Core.Contexts.AccountContext.UseCases.Authenticate
 
             #endregion
 
+            #region Recupera os perfis do usuário
+
+            #endregion
+
             #region 05. Retorna os dados
             try
             {
@@ -69,7 +73,7 @@ namespace JwtStore.Core.Contexts.AccountContext.UseCases.Authenticate
                     Id = user.Id.ToString(),
                     Name = user.Name,
                     Email = user.Email,
-                    Roles = Array.Empty<string>()
+                    Roles = user.Roles.Select(x=> x.Name).ToArray()
                 };
 
                 return new Response(string.Empty, data);
